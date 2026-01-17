@@ -1,0 +1,36 @@
+app-id: com.futunn.ftnn-desktop
+runtime: org.freedesktop.Platform
+runtime-version: '25.08' # Choose a stable, supported version
+sdk: org.freedesktop.Sdk
+command: /app/lib/FTNN/FTNN
+finish-args:
+  # Basic permissions for a GUI app. Adjust as needed.
+  - --share=ipc
+  - --socket=x11
+  - --socket=pulseaudio
+  - --share=network
+  - --device=dri
+  - --persist=.config/FTNN
+  - --persist=.config/Futu-Linux
+  - --persist=Library
+modules:
+  - name: ftnn-desktop
+    buildsystem: simple
+    build-options:
+      strip: false
+      no-debuginfo: true
+    sources:
+      - type: file
+        url: https://softwaredownload.futunn.com/FTNN_desktop_16.1.14618_amd64.deb
+        sha256: 53cd361a5e16c63878f101b602f87d0360ed57eb06e21b480f6b59467d6ee3d0
+      - type: file
+        path: com.futunn.ftnn-desktop.desktop
+      - type: file
+        path: icon_512.png
+    build-commands:
+      - ar x FTNN_desktop_16.1.14618_amd64.deb
+      - tar -xvf data.tar.xz ./opt/FTNN/
+      - mkdir -m0755 /app/lib
+      - mv ./opt/FTNN /app/lib/
+      - install -Dm644 com.futunn.ftnn-desktop.desktop /app/share/applications/com.futunn.ftnn-desktop.desktop
+      - install -Dm644 icon_512.png /app/share/icons/hicolor/512x512/apps/com.futunn.ftnn-desktop.png

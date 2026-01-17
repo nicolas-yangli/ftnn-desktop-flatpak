@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=FTNN
+Exec=/app/lib/FTNN/FTNN %U
+Icon=com.futunn.ftnn-desktop
+Type=Application
+SingleMainWindow=true
+Categories=Finance;
+Name[zh]=富途牛牛
