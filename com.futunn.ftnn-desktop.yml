@@ -21,14 +21,14 @@ modules:
       no-debuginfo: true
     sources:
       - type: file
-        url: https://softwaredownload.futunn.com/FTNN_desktop_16.1.14618_amd64.deb
-        sha256: 53cd361a5e16c63878f101b602f87d0360ed57eb06e21b480f6b59467d6ee3d0
+        url: https://softwaredownload.futunn.com/FTNN_desktop_16.2.14708_amd64.deb
+        sha256: 80e37b80e0716abf34d4b1b678b7b3d837110c5c9c2f3ab764e4a87dd6c244ca
       - type: file
         path: com.futunn.ftnn-desktop.desktop
       - type: file
         path: icon_512.png
     build-commands:
-      - ar x FTNN_desktop_16.1.14618_amd64.deb
+      - ar x FTNN_desktop_16.2.14708_amd64.deb
       - tar -xvf data.tar.xz ./opt/FTNN/
       - mkdir -m0755 /app/lib
       - mv ./opt/FTNN /app/lib/
