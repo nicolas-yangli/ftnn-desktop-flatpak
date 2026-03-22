@@ -13,6 +13,12 @@ finish-args:
   - --persist=.config/FTNN
   - --persist=.config/Futu-Linux
   - --persist=Library
+  # Input Method (Fcitx5 via IBus emulation)
+  - --talk-name=org.freedesktop.IBus
+  - --talk-name=org.fcitx.Fcitx
+  - --talk-name=org.fcitx.Fcitx5
+  - --talk-name=org.freedesktop.portal.Fcitx
+  - --env=QT_IM_MODULE=ibus
 modules:
   - name: ftnn-desktop
     buildsystem: simple
